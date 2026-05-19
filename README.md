@@ -1,7 +1,5 @@
 # 🍔 Burger Thief
 
-![Burger Thief Demo](./src/assets/hero.png) *Replace this with a screenshot of your app later if you want!*
-
 **Burger Thief** is a modern, highly polished, and fully accessible take on the classic Hangman word-guessing game. Defend your delicious burger from hungry snack thieves by correctly guessing the secret word before all your ingredients are stolen!
 
 ---
