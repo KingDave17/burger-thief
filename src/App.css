@@ -1,0 +1,345 @@
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 900px;
+  padding: 0.5rem 2rem 1.5rem; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; 
+  flex: 1; 
+}
+
+.top-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+.stats {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stat-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 0.3rem 0.9rem;
+}
+
+.stat-badge strong {
+  margin-left: 2px;
+}
+
+.theme-selector {
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.theme-selector:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.theme-selector option {
+  background: #ea580c; 
+  color: white;
+}
+
+.freshness-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.freshness-bar-wrapper {
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.freshness-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.freshness-percent {
+  color: var(--text-primary);
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out, background-color 0.5s ease;
+}
+
+.wrong-guesses-badge {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 0.6rem 1.1rem;
+}
+
+.status-message {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.status-message.playing {
+  font-size: 0.9rem; 
+  font-weight: 500;
+  font-style: italic;
+  padding: 0.6rem 1.5rem; 
+}
+
+.status-message h2 {
+  margin: 0;
+  font-size: 1.1rem; 
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-message p {
+  margin: 0;
+  font-size: 0.95rem; 
+  font-weight: 500;
+}
+
+.status-message.winner {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: inset 0 0 20px rgba(34, 197, 94, 0.2), 0 8px 32px rgba(234, 88, 12, 0.3);
+}
+
+.status-message.winner h2 {
+  color: #fde047; 
+}
+
+.status-message.loser {
+  background: rgba(120, 53, 15, 0.85); 
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6), 0 8px 32px rgba(234, 88, 12, 0.3);
+}
+
+.status-message.loser h2 {
+  color: #ef4444; 
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+.status-message.loser p {
+  color: #fcd34d; 
+}
+
+.burger-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-img {
+  width: 230px; 
+  height: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.burger-img:hover {
+  transform: scale(1.03);
+}
+
+.guess-section {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.guess-section span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem; 
+  height: 2.8rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #c2410c;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+.keyboard-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: auto; 
+  gap: 0.35rem; 
+  width: 100%;
+  max-width: 650px; 
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 0.6rem; 
+}
+
+.keyboard-section button {
+  width: 2.2rem; 
+  height: 2.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #c2410c;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.keyboard-section button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(194, 65, 12, 0.25);
+  color: #ea580c;
+}
+
+.keyboard-section button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.keyboard-section button:disabled {
+  background: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.45);
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.guess-section span.missed {
+  color: #ffffff; 
+  background: var(--error-color); 
+  border-bottom-color: #b91c1c; 
+  opacity: 0.9;
+}
+
+.keyboard-section button.bg-green {
+  background-color: var(--success-color);
+  color: #ffffff;
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.keyboard-section button.bg-red {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  border-color: transparent;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.new-game-btn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.new-game-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.new-game-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
